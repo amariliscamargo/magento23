@@ -1,0 +1,22 @@
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Framework\App\Http\Context');
+$isLoggedIn = $customerSession->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div data-placeholder="messages"></div>
+<div style="color:#000">
+<?php
+    if($isLoggedIn){
+        echo 'Oi! Eu sou um bloco estático exibido apenas para clientes cadastrados!';
+
+    }
+        ?>
+</div>
+
