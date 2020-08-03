@@ -1,3 +1,8 @@
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
 define([
     'jquery',
     'Magento_Ui/js/modal/modal'
@@ -19,7 +24,7 @@ define([
                 'focus': '[name=username]',
                 'responsive': true,
                 'innerScroll': true,
-                'trigger': '.proceed-to-checkout, .some-other-class',
+                'trigger': '.proceed-to-checkout, .trigger-ajax-login',
                 'buttons': []
             };
 
@@ -29,7 +34,7 @@ define([
 
         /** Show login popup window */
         showModal: function() {
-            $(this.modalWindow).modal('openModal');
+            $(this.modalWindow).modal('openModal').trigger('contentUpdated');
         }
     };
 });
